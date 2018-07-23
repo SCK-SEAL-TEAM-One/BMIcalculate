@@ -5,7 +5,7 @@ Test Setup    Go To    ${URL}
 Suite Teardown    Close Browser
 
 *** Variable ***
-${URL}    http://localhost:4321
+${URL}    http://localhost:4321/bmi/
 ${BROWSER}    chrome
 
 *** Testcases ***
