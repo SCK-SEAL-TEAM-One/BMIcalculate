@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "453c6121-a6a7-4ef7-acc4-6e9b98902507",
+		"name": "bmicalculate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BMI_Input_Height_170_Weight_80_Should_Be_27_Point_7_And_Fat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d923503e-d7a9-4af0-8ad3-006f2348af25",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"BMI_Input_Height_170_Weight_80_Should_Be_27_Point_7_And_Fat\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.bmi).to.eql(27.7);",
+							"    pm.expect(jsonData.status).to.eql(\"อ้วน\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "?height=170&weight=80",
+					"query": [
+						{
+							"key": "height",
+							"value": "170"
+						},
+						{
+							"key": "weight",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BMI_Input_Height_170_Weight_50_Should_Be_17_Point_3_And_thin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5abe903c-d5d8-44df-aee1-10ac50e81f6f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"BMI_Input_Height_170_Weight_50_Should_Be_17_Point_3_And_thin\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.bmi).to.eql(17.3);",
+							"    pm.expect(jsonData.status).to.eql(\"ผอม\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "?height=170&weight=50",
+					"query": [
+						{
+							"key": "height",
+							"value": "170"
+						},
+						{
+							"key": "weight",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BMI_Input_Height_152_Weight_71_Should_Be_30_Point_7_And_Very_Fat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1031ef14-a9c0-4663-98ee-a40040cdd4e0",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"BMI_Input_Height_152_Weight_71_Should_Be_30_Point_7_And_Very_Fat\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.bmi).to.eql(30.7);",
+							"    pm.expect(jsonData.status).to.eql(\"อ้วนมาก\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "?height=152&weight=71",
+					"query": [
+						{
+							"key": "height",
+							"value": "152"
+						},
+						{
+							"key": "weight",
+							"value": "71"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BMI_Input_Height_179_Weight_100_Should_Be_31_Point_2_And_Very_Fat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4a8c9cd-f79d-42fe-acfc-328262b80a5d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"BMI_Input_Height_179_Weight_100_Should_Be_31_Point_2_And_Very_Fat\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.bmi).to.eql(31.2);",
+							"    pm.expect(jsonData.status).to.eql(\"อ้วนมาก\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "?height=179&weight=100",
+					"query": [
+						{
+							"key": "height",
+							"value": "179"
+						},
+						{
+							"key": "weight",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
