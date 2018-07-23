@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "7c54f96c-a778-4611-a88b-931922694f23",
+		"name": "bmi calculate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Input height 170 weight 80  bmi shoulg be 27.7 and status fat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a91ee43-a49b-4e77-950b-38b697704080",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"bmi shoulg be 27.7\", function () {",
+							"    pm.expect(jsonData.bmi).to.eql(27.7);",
+							"});",
+							"",
+							"pm.test(\"status shoulg be อ้วน\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"อ้วน\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4321/bmi?height=170&weight=80",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"bmi"
+					],
+					"query": [
+						{
+							"key": "height",
+							"value": "170"
+						},
+						{
+							"key": "weight",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
