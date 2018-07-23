@@ -1,0 +1,110 @@
+{
+	"info": {
+		"name": "bmi",
+		"_postman_id": "5aa8209f-d3b1-d2f8-450c-5f0aac1a3942",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "คำนวน bmi ของพี่หมี ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "088eafbb-c57c-4126-af16-30249cfff5f1",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"คำนวน bmi ได้ 27.7 สถานะเป็น อ้วน \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.bmi).to.eql(27.7);",
+							"    pm.expect(jsonData.status).to.eql(\"อ้วน\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/bmi/calculate?height=170&weight=80",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bmi",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "height",
+							"value": "170",
+							"equals": true
+						},
+						{
+							"key": "weight",
+							"value": "80",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "คำนวน bmi ของเล็ก",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e77a2ada-5f5e-4d13-8c00-f27cbf15b165",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"คำนวน bmi ได 17.3 สถานะเป็น ผอม \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.bmi).to.eql(17.3);",
+							"    pm.expect(jsonData.status).to.eql(\"ผอม\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/bmi/calculate?height=170&weight=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bmi",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "height",
+							"value": "170",
+							"equals": true
+						},
+						{
+							"key": "weight",
+							"value": "50",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
