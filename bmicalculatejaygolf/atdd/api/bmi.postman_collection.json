@@ -55,6 +55,56 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "คำนวน bmi ของเล็ก",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e77a2ada-5f5e-4d13-8c00-f27cbf15b165",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"คำนวน bmi ได 17.3 สถานะเป็น ผอม \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.bmi).to.eql(17.3);",
+							"    pm.expect(jsonData.status).to.eql(\"ผอม\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/bmi/calculate?height=170&weight=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bmi",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "height",
+							"value": "170",
+							"equals": true
+						},
+						{
+							"key": "weight",
+							"value": "50",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
