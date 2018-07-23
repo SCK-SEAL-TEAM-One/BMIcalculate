@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180723 11:03:39.518" generator="Robot 3.0.4 (Python 2.7.8 on win32)">
+<suite source="D:\gocode\src\BMIcalculate\bmicalculate\atdd\ui\bmi.robot" id="s1" name="Bmi">
+<test id="s1-t1" name="คำนวน bmi ของพี่หมี">
+<kw name="เปิด Browser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:3000/bmi</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180723 11:03:39.632" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/bmi'.</msg>
+<status status="PASS" endtime="20180723 11:03:44.333" starttime="20180723 11:03:39.632"></status>
+</kw>
+<status status="PASS" endtime="20180723 11:03:44.334" starttime="20180723 11:03:39.631"></status>
+</kw>
+<kw name="ใส่ส่วนสูง">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=height</arg>
+<arg>170</arg>
+</arguments>
+<msg timestamp="20180723 11:03:44.335" level="INFO">Typing text '170' into text field 'id=height'.</msg>
+<status status="PASS" endtime="20180723 11:03:44.410" starttime="20180723 11:03:44.334"></status>
+</kw>
+<status status="PASS" endtime="20180723 11:03:44.410" starttime="20180723 11:03:44.334"></status>
+</kw>
+<kw name="ใส่น้ำหนัก">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=weight</arg>
+<arg>80</arg>
+</arguments>
+<msg timestamp="20180723 11:03:44.411" level="INFO">Typing text '80' into text field 'id=weight'.</msg>
+<status status="PASS" endtime="20180723 11:03:44.473" starttime="20180723 11:03:44.411"></status>
+</kw>
+<status status="PASS" endtime="20180723 11:03:44.474" starttime="20180723 11:03:44.411"></status>
+</kw>
+<kw name="กดปุ่มคำนวน">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id=calculate</arg>
+</arguments>
+<msg timestamp="20180723 11:03:44.475" level="INFO">Clicking button 'id=calculate'.</msg>
+<status status="PASS" endtime="20180723 11:03:44.541" starttime="20180723 11:03:44.474"></status>
+</kw>
+<status status="PASS" endtime="20180723 11:03:44.541" starttime="20180723 11:03:44.474"></status>
+</kw>
+<kw name="จะได้ค่า bmi และ bmistatus">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>27.7</arg>
+</arguments>
+<status status="PASS" endtime="20180723 11:03:44.557" starttime="20180723 11:03:44.542"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>อ้วน</arg>
+</arguments>
+<status status="PASS" endtime="20180723 11:03:44.584" starttime="20180723 11:03:44.557"></status>
+</kw>
+<status status="PASS" endtime="20180723 11:03:44.584" starttime="20180723 11:03:44.542"></status>
+</kw>
+<kw name="ปิด Browser">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180723 11:03:46.643" starttime="20180723 11:03:44.585"></status>
+</kw>
+<status status="PASS" endtime="20180723 11:03:46.643" starttime="20180723 11:03:44.584"></status>
+</kw>
+<status status="PASS" endtime="20180723 11:05:14.906" critical="yes" starttime="20180723 11:03:39.630"></status>
+</test>
+<status status="PASS" endtime="20180723 11:05:14.912" starttime="20180723 11:03:39.520"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Bmi" pass="1">Bmi</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
