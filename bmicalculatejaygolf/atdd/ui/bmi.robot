@@ -1,28 +1,38 @@
 *** Settings ***
 Library    SeleniumLibrary
-
+Suite Setup    Open Browser    http://localhost:3000/bmi/    chrome
+Suite teardown    ปิด Browser
 *** Variables ***
 
 *** TestCases ***
 คำนวน bmi ของพี่หมี 
     เปิด Browser 
-    ใส่ส่วนสูง  
-    ใส่น้ำหนัก
+    ใส่ส่วนสูง    170
+    ใส่น้ำหนัก    80
     กดปุ่มคำนวน 
-    จะได้ค่า bmi และ bmistatus 
-    ปิด Browser
+    จะได้ค่า bmi และ bmistatus    27.7    อ้วน
+
+คำนวน bmi ของเล็ก
+    เปิด Browser 
+    ใส่ส่วนสูง    170
+    ใส่น้ำหนัก     50
+    กดปุ่มคำนวน 
+    จะได้ค่า bmi และ bmistatus    17.3    ผอม 
 
 *** Keywords ***
 เปิด Browser 
-    Open Browser    http://localhost:3000/bmi    chrome
+    go to     http://localhost:3000/bmi    
 ใส่ส่วนสูง
-    Input Text    id=height    170
+    [Arguments]    ${height}    
+    Input Text    id=height    ${height}
 ใส่น้ำหนัก
-    Input Text    id=weight    80
+    [Arguments]    ${weight}    
+    Input Text    id=weight    ${weight}
 กดปุ่มคำนวน
     Click Button    id=calculate 
 จะได้ค่า bmi และ bmistatus 
-    Wait Until Page Contains     27.7    
-    Wait Until Page Contains     อ้วน    
+    [Arguments]    ${bmi}   ${status}
+    Wait Until Page Contains     ${bmi}   
+    Wait Until Page Contains     ${status}    
 ปิด Browser 
-    Close Browser 
+    Close Browser
